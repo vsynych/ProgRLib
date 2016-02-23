@@ -1,0 +1,29 @@
+The decompose function for R
+
+Decompose a vector into frequency components
+
+DESCRIPTION:
+       Produces k frequency components as a matrix from a vector.
+
+USAGE:
+       decompose(x,breaks)
+
+REQUIRED ARGUMENTS:
+x:       a numeric vector with no missing data
+breaks:  a numeric constant or a list of break points into which x should be broken.
+         If breaks is a constant then x will be broken into that number of frequncies.
+         This argument is passed directly to cut to determine the break points.
+         See cut for more details.
+
+VALUE:
+       a matrix with dimension nxm where n is the lenght of x and m is the number of
+       break categories.
+
+EXAMPLES:
+       x <- rnorm(101)
+       freq.x <- decompose(x,c(1,10,30,80))
+	    # decompose x into 3 frequency categories.
+	    # x[,1] represents from 1 to 9 cycles in 101 data points
+	    # x[,2] represents from 10 to 29 cycles in 101 data points
+	    # x[,3] represents from 30 to 50 cycles in 101 data points
+	    # you can only have up to 50 cycles in 101 data points.

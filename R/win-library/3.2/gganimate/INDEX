@@ -1,0 +1,10 @@
+animation_saver         Retrieve a function for saving animations based
+                        on a string/function or a filename
+auto_browse             Auto browse to a filename
+gg_animate              Show an animation of a ggplot2 object
+gg_animate_save         Save a gganimate object to a file
+gganimate_tempfile      Create a temporary file within the temporary
+                        directory
+plot_ggplot_build       Plot a built ggplot object
+print.gg_animate        Print a gganimate object, allowing browsing in
+                        RStudio

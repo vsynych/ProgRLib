@@ -1,0 +1,8 @@
+md <- readLines(curl::curl("https://raw.githubusercontent.com/yihui/knitr/master/NEWS.md"))
+html <- markdown_html(md)
+man <- markdown_man(md)
+tex <- markdown_latex(md)
+
+xml <- markdown_xml(md)
+# Back to (standardized) markdown
+cm <- markdown_commonmark(md)

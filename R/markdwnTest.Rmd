@@ -1,0 +1,83 @@
+
+---
+title: "test"
+author: "me"
+date: "November 30, 2015"
+output: html_document
+---
+
+Example text outside R code here; we know the value of pi is `r {pi}`.
+
+
+>my-label, eval=TRUE, dev='png'
+
+```{r}
+
+set.seed(1213)  # for reproducibility
+
+x = cumsum(rnorm(100))
+
+mean(x)  # mean of x
+
+plot(x, type = 'l')  # Brownian motion
+
+  
+```
+
+  Other text outside R code here.
+  
+```{r qplot, fig.width = 5, fig.height = 5, fig.align = "center"}
+library(ggplot2)
+qplot(wt, am, color = vs, data = mtcars)
+```
+
+```{r}
+x <- 1:10
+y <- round(rnorm(10, x, 1), 2)
+df <- data.frame(x, y)
+df
+qplot(x, y, data=df)
+library(lattice)
+xyplot(y~x)
+
+```
+
+```{r , results='asis', echo=FALSE}
+cat("Here are some dot points\n\n")
+cat(paste("* The value of y[", 1:3, "] is ", y[1:3], sep="", collapse="\n"))
+
+
+```
+
+```{r , results='asis', echo=FALSE}
+
+cat("x | y", "--- | ---", sep="\n")
+cat(apply(df, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
+
+```
+
+Simple dot points:
+
+* Point 1
+  + Sub 1
+* Point 2
+* Point 3
+
+and numeric dot points:
+
+1. Number 1
+2. Number 2
+    + Sub 1
+    + Sub 2
+3. Number 3
+
+and nested dot points:
+
+* A
+    + A.1
+    + A.2
+* B
+    + B.1
+    + B.2
+   
+$$\frac{1}{1+\exp(-x)}$$
